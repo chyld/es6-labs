@@ -11,16 +11,9 @@ function random(){
     setTimeout(() => {
       const rnd = Math.floor(Math.random() * 10);
       resolve(2 ** rnd);
-    });
+    }, 1000);
   });
 }
-
-// random().then(val => {
-//   console.log("***> val1:", val);
-//   return random();
-// }).then(val => {
-//   console.log("***> val2:", val);
-// });
 
 async function stuff(){
   const a = await random();
@@ -33,3 +26,8 @@ async function stuff(){
 
 const x = stuff();
 console.log("***> x:", x);
+
+app.get('/hello', async function(req, res){
+  const a = await random();
+  res.send({a});
+});
