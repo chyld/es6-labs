@@ -1,21 +1,17 @@
 // arrays
 
-const [a, b, ...c] = [2, 1, 7, 8, 9];
+let [a, ...b] = [1, 2, 3, 4, 5];
 console.log("***> a:", a);
 console.log("***> b:", b);
-console.log("***> c:", c);
 
-let nums1 = [1, 2, 3];
-let nums2 = [4, 5, 6];
-let nums = [...nums1, ...nums2];
-console.log("***> nums:", nums);
-let w1 = 'hello';
-let w2 = [...w1];
-console.log("***> w1:", w1);
-console.log("***> w2:", w2);
+let c = [...[1,2,3], ...[4, 5,6]];
+console.log("***> c:", c);
 
 // objects
 
-const {aa, bb} = {aa: 1, bb: 2, cc: 3, dd: 4, ee: 5};
-console.log("***> aa:", aa);
-console.log("***> bb:", bb);
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+let n = { x, y, ...z };
+console.log("***> x:", x);
+console.log("***> y:", y);
+console.log("***> z:", z);
+console.log("***> n:", n);
